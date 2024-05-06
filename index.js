@@ -12,11 +12,29 @@ app.use(cors());
 // Este middleware es responsable de analizar el cuerpo de las solicitudes entrantes con el tipo de contenido application/json.
 app.use(express.json());
 app.get('/', (req, res) => {
+console.log( dirname)
+res.sendFile(path.join( dirname, 'index.html'));
 // ver seccion Metodo GET
 });
 
+const arreglo usuarios = Array()
+const arreglo mails = Array()
+
 app.post('/', (req, res) => {
-// ver seccion Metodo POST
+
+// Guardamos el usuario y el email que venian en el Json del body en dos variables.
+const {usuario, email} = req.body;
+
+// Guardamos el usuario en el arreglo de usuarios.
+arrreglo usuarios.push(usuario)
+arreglo mails.push(email)
+
+// Imprimimos los arrays para ver si se estan agregando los elementos
+console.log(usuarios)
+console.log(mails)
+// Devolvemos un codigo de respuesta 201 indicando que el recurso fue creado con exito junto con el usuario y el ...
+//mail que fueron recibidos.
+res.status(201).send({usuario,email})
 });
 // Este m t o d o inicia el servidor Express y lo pone a la escucha de solicitudes entrantes en un puerto espec fico.
 app.listen(port, () => {
