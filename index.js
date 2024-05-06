@@ -30,8 +30,8 @@ arreglo_usuarios.push(usuario)
 arreglo_mails.push(email)
 
 // Imprimimos los arrays para ver si se estan agregando los elementos
-console.log(usuarios)
-console.log(mails)
+console.log(arreglo_usuarios)
+console.log(arreglo_mails)
 // Devolvemos un codigo de respuesta 201 indicando que el recurso fue creado con exito junto con el usuario y el mail que fueron recibidos.
 res.status(201).send({usuario,email})
 });
