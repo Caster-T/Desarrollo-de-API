@@ -12,8 +12,8 @@ app.use(cors());
 // Este middleware es responsable de analizar el cuerpo de las solicitudes entrantes con el tipo de contenido application/json.
 app.use(express.json());
 app.get('/', (req, res) => {
-console.log( dirname)
-res.sendFile(path.join( dirname, 'index.html'));
+console.log(__dirname)
+res.sendFile(path.join(__dirname, 'index.html'));
 // ver seccion Metodo GET
 });
 
